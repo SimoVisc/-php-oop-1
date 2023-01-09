@@ -5,6 +5,12 @@ class Movie{
   public $genre;
   public $year;
 
+  public function __construct($title , $genre , $year){
+    $this -> originalTitle = $title;
+    $this -> genre = $genre;
+    $this -> year = $year;
+  }
+
   public function setOriginalTitle($title){
     $this -> originalTitle = $title;
   }
@@ -14,15 +20,11 @@ class Movie{
   }
 }
 
-$Moonlight = new Movie ();
-$Moonlight -> setOriginalTitle("Moonlight");
-$Moonlight -> genre = "Drama";
-$Moonlight -> year = 2016;
+$Moonlight = new Movie ("Moonlight", "Drama", 2016);
 
-$Inception = new Movie ();
-$Inception -> setOriginalTitle("Inception");
-$Inception -> genre = "Action";
-$Inception -> year = 2010;
+
+$Inception = new Movie ("Inception", "Action", 2010);
+
 
 var_dump($Moonlight);
 var_dump($Inception)
