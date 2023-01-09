@@ -6,7 +6,9 @@ class Movie{
   public $year;
 }
 
-$moonlight = new Movie ();
-$Inception = new Movie ()
+$Moonlight = new Movie ();
+$Inception = new Movie ();
 
+var_dump($Moonlight);
+var_dump($Inception)
 ?>
