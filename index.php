@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ ."/classes/movie.php";
+require_once __DIR__ ."/genre.php";
 
 $movies =[ 
   new Movie("Moonlight", ["Drama", "Action"], 180),
