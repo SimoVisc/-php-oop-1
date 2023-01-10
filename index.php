@@ -1,34 +1,13 @@
 <?php
+require_once __DIR__ ."/classes/movie.php";
 
-class Movie{
-  private $originalTitle;
-  public $genre;
-  public $year;
+$movies =[ 
+  new Movie("Moonlight", ["Drama", "Action"], 180),
+  new Movie ("Inception", ["Action"], 210),
+];
 
-  public function __construct($title , $genre , $year){
-    $this -> originalTitle = $title;
-    $this -> genre = $genre;
-    $this -> year = $year;
-  }
-
-  public function setOriginalTitle($title){
-    $this -> originalTitle = $title;
-  }
- 
-  public function getOriginalTitle(){
-    return $this -> originalTitle;
-  }
-}
-
-$Moonlight = new Movie ("Moonlight", "Drama", 2016);
-
-
-$Inception = new Movie ("Inception", "Action", 2010);
-
-
-var_dump($Moonlight);
-var_dump($Inception)
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +17,20 @@ var_dump($Inception)
     <title>Php OOP</title>
 </head>
 <body>
-    <h1> <?php echo $Moonlight -> getOriginalTitle(); ?> </h1>
-    <h1> <?php echo $Inception -> getOriginalTitle(); ?> </h1>
+   <h1>Film da vedere:</h1> 
+   <ul>
+      <?php foreach($movies as $movie) { ?>
+      <li>
+        <h3><?= $movie-> title; ?></h3>
+        <h4>Durata:<?php echo $movie-> duration; ?> minuti</h4>
+        <h4>Genere: </h4>
+        <ul> 
+          <?php foreach($movie-> genres as $genre ) { ?>
+          <li><?php echo ucfirst($genre); ?></li>
+          <?php } ?>
+        </ul> 
+      </li>
+      <?php } ?>
+   </ul>
 </body>
 </html>
